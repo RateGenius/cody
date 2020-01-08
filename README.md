@@ -40,9 +40,9 @@ For more examples and ideas, visit:
 
 ### Installing
 
-During this step, Docker will attempt to connect to the internet and download the image dependencies for the `phpunit`
+During this step, Docker will attempt to connect to the Internet and download the image dependencies for the `phpunit`
 container. After the first command, Docker will use cached copies of the images and the commands will take less time to
-run.
+run. From the project root directory, run the following command:
 
 ```console
 $ bin/phpunit --version
