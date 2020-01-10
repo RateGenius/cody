@@ -69,14 +69,23 @@ class HighScoresList implements Countable
     }
 
     /**
-     * Returns an array containing the top $length scores. For example, HighScoresList->top(3) returns the top three
-     * scores beginning with the highest score.
-     *
-     * @param int $length
+     * Returns an array containing the top three scores, beginning with the highest.
      *
      * @return array
      */
-    public function top(int $length = 1): array
+    public function topThree(): array
+    {
+        // TODO
+
+        return [];
+    }
+
+    /**
+     * Returns an array containing the top five scores, beginning with the highest.
+     *
+     * @return array
+     */
+    public function topFive(): array
     {
         // TODO
 

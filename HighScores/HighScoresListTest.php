@@ -56,13 +56,13 @@ class HighScoresListTest extends TestCase
     {
         $highScores = new HighScoresList([7, 3, 4, 9, 6, 3, 2]);
 
-        $this->assertEquals($highScores->top(3), [9, 7, 6]);
+        $this->assertEquals($highScores->topThree(), [9, 7, 6]);
     }
 
     public function test_that_a_high_scores_list_can_find_the_top_five_scores(): void
     {
         $highScores = new HighScoresList([7, 3, 4, 9, 6, 3, 2, 10, 7]);
 
-        $this->assertEquals($highScores->top(5), [10, 9, 7, 7, 6]);
+        $this->assertEquals($highScores->topFive(), [10, 9, 7, 7, 6]);
     }
 }
