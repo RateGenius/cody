@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+docker run \
+    --name "cody-node" \
+    --rm -it \
+    --init \
+    -v "$(pwd)/js":"$(pwd)" \
+    -w "$(pwd)" \
+    -u "$(id -u)" \
+    node:16.15.0-buster-slim "$@"
