@@ -7,4 +7,5 @@ docker run \
     -v "$(pwd)/js":"$(pwd)" \
     -w "$(pwd)" \
     -u "$(id -u)" \
+    -p 8080:8080 \
     node:16.15.0-buster-slim "$@"
