@@ -1,7 +1,48 @@
 <template>
   <v-app>
+    <v-navigation-drawer
+      app
+      clipped
+    >
+      <v-list
+        dense
+        nav
+      >
+        <v-list-item
+          link
+          :to="{ name: 'home' }"
+        >
+          <v-list-item-icon>
+            <v-icon>mdi-view-dashboard</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>Home</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-subheader>Challenges</v-subheader>
+
+        <v-list-item
+          v-for="item in items"
+          :key="item.title"
+          link
+          :to="{ name: item.routeName }"
+        >
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
     <v-app-bar
       app
+      clipped-left
       color="primary"
       dark
     >
@@ -38,11 +79,9 @@
     </v-app-bar>
 
     <v-main>
-      <nav>
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
-      </nav>
-      <router-view/>
+      <v-container>
+        <router-view/>
+      </v-container>
     </v-main>
   </v-app>
 </template>
@@ -50,10 +89,14 @@
 <script>
 
 export default {
-  name: 'App',
-
   data: () => ({
-    //
+    items: [
+      {
+        title: 'Data Tables',
+        routeName: 'data-tables-challenge',
+        icon: 'mdi-image'
+      }
+    ]
   })
 };
 </script>

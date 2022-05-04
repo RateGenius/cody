@@ -46,59 +46,48 @@ For more examples and ideas, visit:
 During this step, Docker will attempt to connect to the Internet and download
 the image dependencies for the `node` container. After the first command,
 Docker will use cached copies of the images and the commands will take less time
-to run. From the project root directory, run the following command:
+to run. From the project root ("cody") directory, run the following command to
+ensure that the `node` container is downloaded and running properly:
 
 ```console
-$ bin/phpunit --version
-PHPUnit 6.5.13 by Sebastian Bergmann, Julien Breux (Docker) and contributors.
+$ bin/node --version
+v16.15.0
 
 ```
 
 ## Code Challenges
 
-### High Scores
+Please choose one of the code challenges below.
 
-Manage a game player's High Score list.
+### 1. Data Tables
 
-Your task is to build a high-score component of the classic Frogger game, one of the highest selling and addictive games
-of all time, and a classic of the arcade era. Your task is to write methods that return the highest score from the list,
-the last added score, and the top three and top five highest scores.
+The objective of this challenge is to display a list of loan applications using
+a Vuetify `<v-data-table>` component.
 
-A HighScoreList accepts an array with one or more numbers, each representing one 'game score'. Run the unit tests with
-the following command:
+Begin by running the application:
 
 ```console
-$ ./bin/phpunit HighScores/
+$ bin/npm run serve
 ```
 
-Please ensure that all unit tests are passing before submitting your solution.
+To complete this challenge, please satisfy the following requirements:
 
-# cody (vue-cli generated the README below)
+1. make an HTTP request to an API and receive mock loan applications;
+2. display the mock loan applications using Vuetify's `<v-data-table>`;
+   a. all loan applications can appear on a single page (no pagination
+      necessary);
+   b. allow the user to sort loan applications by clicking a column header; and
+3. ensure that all Jest tests covering the `DataTablesChallenge` component are
+   passing.
 
-## Project setup
-```
-npm install
-```
+To run the entire Jest test suite:
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+```console
+$ bin/npm run test:unit
 ```
 
-### Run your unit tests
-```
-npm run test:unit
-```
+To run the linter:
 
-### Lints and fixes files
+```console
+$ bin/npm run lint
 ```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

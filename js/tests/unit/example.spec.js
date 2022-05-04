@@ -1,12 +1,14 @@
 import { shallowMount } from '@vue/test-utils';
-import HelloWorld from '@/components/HelloWorld.vue';
+import DataTablesChallenge from '@/components/DataTablesChallenge.vue';
 
-describe('HelloWorld.vue', () => {
-  it('renders props.msg when passed', () => {
-    const msg = 'new message';
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg }
+describe('Feature: DataTablesChallenge component', () => {
+  describe('Scenario: User views the component', () => {
+    describe('When the component is rendered', () => {
+      it('Then the component contains the text "Data Tables Challenge"', () => {
+        const wrapper = shallowMount(DataTablesChallenge);
+
+        expect(wrapper.text()).toMatch('Data Tables Challenge');
+      });
     });
-    expect(wrapper.text()).toMatch(msg);
   });
 });

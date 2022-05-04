@@ -1,16 +1,9 @@
 <template>
-  <HelloWorld />
+  <v-row>
+    <v-col>
+      <h2>Cody</h2>
+
+      <p>See README.md for project description.</p>
+    </v-col>
+  </v-row>
 </template>
-
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
-
-export default {
-  name: 'HomeView',
-
-  components: {
-    HelloWorld
-  }
-};
-</script>
