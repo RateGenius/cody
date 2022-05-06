@@ -13,7 +13,7 @@ be connected to the internet in order to download docker images and run them for
 the first time.
 
 To ensure that Docker is installed, open a command-line shell and run `docker
-run hellow-world`:
+run hello-world`:
 
 ```console
 $ docker run hello-world
@@ -56,8 +56,6 @@ v16.15.0
 ```
 
 ## Code Challenges
-
-Please choose one of the code challenges below.
 
 ### 1. Data Tables
 
