@@ -64,6 +64,8 @@ Please choose one of the code challenges below.
 The objective of this challenge is to display a list of loan applications using
 a Vuetify `<v-data-table>` component.
 
+![Screenshot of working data table](src/assets/readme_working_data_table.png)
+
 Begin by running the application:
 
 ```console
@@ -72,13 +74,43 @@ $ bin/npm run serve
 
 To complete this challenge, please satisfy the following requirements:
 
-1. make an HTTP request to an API and receive mock loan applications;
+1. make a GET request to the following URL to receive mock loan applications:
+
+```
+https://6271819ac455a64564b41998.mockapi.io/api/v3/applications
+```
+
 2. display the mock loan applications using Vuetify's `<v-data-table>`;
-   a. all loan applications can appear on a single page (no pagination
-      necessary);
-   b. allow the user to sort loan applications by clicking a column header; and
+   a. the table should have the following columns (from left to right):
+      1. "App Id";
+      2. "Last Name";
+      3. "First Name";
+      4. "State";
+      5. "Status";
+      6. "My Last Note";
+      7. "Time In Status";
+      8. "Task";
+      9. "Last Updated"; and
+   b. format date value columns using a relative format (e.g., "18 hours ago")
+      (hint: the Luxon package, which is already included in package.json, has a
+      `DateTime` object which defines a `toRelative()` method that returns this
+      format);
+   c. by default the table should sort in descending order by "My Last Note";
+   d. allow the user to sort loan applications by clicking a column header; and
+
 3. ensure that all Jest tests covering the `DataTablesChallenge` component are
    passing.
+
+![Screenshot of unit tests passing](src/assets/readme_unit_tests_passing.png)
+
+To build the project and start a local development server:
+
+```console
+$ bin/npm run serve
+```
+
+The dev server (based on webpack-dev-server) comes with Hot-Module-Replacement
+(HMR).
 
 To run the entire Jest test suite:
 
@@ -91,3 +123,10 @@ To run the linter:
 ```console
 $ bin/npm run lint
 ```
+
+#### FAQs
+
+Q: Do I need to install any additional JS packages?
+
+A: No. Of course you can install additional JS packages if you'd like, but it's
+possible to complete the challenge using only the installed packages.
