@@ -43,17 +43,45 @@ For more examples and ideas, visit:
 
 ### Installing
 
-During this step, Docker will attempt to connect to the Internet and download
-the image dependencies for the `node` container. After the first command,
-Docker will use cached copies of the images and the commands will take less time
-to run. From the project root ("cody") directory, run the following command to
-ensure that the `node` container is downloaded and running properly:
+Before you begin, pleased ensure that you have [forked this repository and
+cloned it to your computer](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
+Then `cd` into the repository's root directory. From this point on, these
+instructions will provide specific command-line commands which assume that your
+current working directory is the Cody project's root directory.
+
+To install the project dependencies, all we need to do is execute the `bin/node`
+script. The `bin/node` script passes its arguments to a `docker run` command and
+Docker will attempt to connect to the Internet and download the image
+dependencies necessary in order to run the `node` container. From the project
+root ("cody") directory, run the following command to ensure that the `node`
+container is downloaded and running properly:
 
 ```console
 $ bin/node --version
 v16.15.0
 
 ```
+
+This first command takes the most time to run but other commands will run much
+faster. Other scripts that we will use (e.g., `bin/npm`) depend on `bin/node`,
+and Docker will use cached copies of the `node` container's image dependencies
+to conserve time and bandwidth.
+
+#### Troubleshooting
+
+Q: I received the following error after running `bin/node --version`:
+
+```
+Error: Could not find any Python installation to use
+```
+
+A: This is a known issue on Macs with an M1 or Apple silicon chip (as oposed to
+Macs with an Intel chip). Fortunately, users have been able to resolve the issue
+by installing Rosetta 2.
+
+See the [Docker installation
+instructions](https://docs.docker.com/desktop/mac/install/#mac-with-apple-silicon)
+for details.
 
 ## Code Challenges
 
