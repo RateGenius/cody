@@ -101,7 +101,8 @@ https://6271819ac455a64564b41998.mockapi.io/api/v3/applications
 ```
 
 2. display the mock loan applications using Vuetify's `<v-data-table>`;
-   a. the table should have the following columns (from left to right):
+
+   1. the table should have the following columns (from left to right):
       1. "App Id";
       2. "Last Name";
       3. "First Name";
@@ -110,13 +111,13 @@ https://6271819ac455a64564b41998.mockapi.io/api/v3/applications
       6. "My Last Note";
       7. "Time In Status";
       8. "Task";
-      9. "Last Updated"; and
-   b. format date value columns using a relative format (e.g., "18 hours ago")
+      9. "Last Updated";
+   2. format date value columns using a relative format (e.g., "18 hours ago")
       (hint: the Luxon package, which is already included in package.json, has a
       `DateTime` object which defines a `toRelative()` method that returns this
       format);
-   c. by default the table should sort in descending order by "My Last Note";
-   d. allow the user to sort loan applications by clicking a column header; and
+   3. by default the table should sort in descending order by "My Last Note";
+   4. allow the user to sort loan applications by clicking a column header; and
 
 3. ensure that all Jest tests covering the `DataTablesChallenge` component are
    passing.
