@@ -92,12 +92,6 @@ a Vuetify `<v-data-table>` component.
 
 ![Screenshot of working data table](src/assets/readme_working_data_table.png)
 
-Begin by running the application:
-
-```console
-$ bin/npm run serve
-```
-
 To complete this challenge, please satisfy the following requirements:
 
 1. make a GET request to the following URL to receive mock loan applications:
@@ -135,10 +129,10 @@ To build the project and start a local development server:
 $ bin/npm run serve
 ```
 
-The dev server (based on webpack-dev-server) comes with Hot-Module-Replacement
-(HMR).
+The local development server (based on webpack-dev-server) comes with
+Hot-Module-Replacement (HMR) enabled.
 
-To run the entire Jest test suite:
+To run the Jest test suite:
 
 ```console
 $ bin/npm run test:unit
@@ -154,5 +148,5 @@ $ bin/npm run lint
 
 Q: Do I need to install any additional JS packages?
 
-A: No. Of course you can install additional JS packages if you'd like, but it's
-possible to complete the challenge using only the installed packages.
+A: No. You _can_ install additional JS packages if you'd like, but it is not
+necessary in order to complete the challenge.
