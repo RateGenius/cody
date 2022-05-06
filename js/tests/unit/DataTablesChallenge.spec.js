@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { beforeEach, describe, expect, it, jest } from '@jest/globals';
 import { cloneDeep } from 'lodash';
+import { DateTime } from 'luxon';
 import { mount } from '@vue/test-utils';
 import Vue from 'vue';
 import Vuex from 'vuex';
@@ -55,6 +56,32 @@ describe('Feature: DataTablesChallenge component', () => {
           .get('[data-test-id=the-data-table] tr:nth-child(1) > td:nth-child(1)');
 
         expect(firstColumnOfFirstRow.text()).toMatch('50');
+      });
+
+      it('And the text of the first row\'s "My Last Note" column is formatted using a relative format', async () => {
+        axios.get.mockResolvedValue({ status: 200, data: mockAxiosResponse });
+
+        const wrapper = mount(DataTablesChallenge, { store, vuetify });
+
+        await store.dispatch('loadLoanApplications');
+
+        const firstColumnOfFirstRow = await wrapper
+          .get('[data-test-id=the-data-table] tr:nth-child(1) > td:nth-child(1)');
+        const firstColumnOfFirstRowText = firstColumnOfFirstRow.text();
+        expect(firstColumnOfFirstRowText.length).toBeGreaterThan(0);
+
+        const sixthColumnOfFirstRow = await wrapper
+          .get('[data-test-id=the-data-table] tr:nth-child(1) > td:nth-child(6)');
+        const sixthColumnOfFirstRowText = sixthColumnOfFirstRow.text();
+        expect(sixthColumnOfFirstRowText.length).toBeGreaterThan(0);
+
+        const mockLoanApplication = mockAxiosResponse.data.applications
+          .find((application) => application.id === firstColumnOfFirstRowText);
+        const expected = DateTime
+          .fromISO(mockLoanApplication.lastNoteByCurrentUser)
+          .toRelative();
+
+        expect(sixthColumnOfFirstRowText).toMatch(expected);
       });
     });
 
