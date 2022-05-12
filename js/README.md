@@ -67,6 +67,12 @@ faster. Other scripts that we will use (e.g., `bin/npm`) depend on `bin/node`,
 and Docker will use cached copies of the `node` container's image dependencies
 to conserve time and bandwidth.
 
+To install the JavaScript dependencies for the project:
+
+```console
+$ bin/npm install
+```
+
 #### Troubleshooting
 
 Q: I received the following error after running `bin/node --version`:
@@ -116,7 +122,9 @@ https://6271819ac455a64564b41998.mockapi.io/api/v3/applications
       (hint: the Luxon package, which is already included in package.json, has a
       `DateTime` object which defines a `toRelative()` method that returns this
       format);
-   3. by default the table should sort in descending order by "My Last Note";
+   3. by default the table should sort in descending order by "My Last Note"
+      where the loan application with the most recent "My Last Note" appears at
+      the top;
    4. allow the user to sort loan applications by clicking a column header; and
 
 3. ensure that all Jest tests covering the `DataTablesChallenge` component are
