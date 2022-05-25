@@ -57,7 +57,6 @@ export default {
     ...mapActions({
       loadLoanApplications: 'loadLoanApplications'
     }),
-
     timeAgo (date) {
       return DateTime.fromISO(date).toRelative();
     }
